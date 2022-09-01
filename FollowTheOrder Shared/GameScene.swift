@@ -1,20 +1,23 @@
-//
-//  GameScene.swift
-//  FollowTheOrder Shared
-//
-//  Created by Veronika on 31.08.2022.
-//
-
 import SpriteKit
 import GameplayKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
   
-  var spinnyNode : SKShapeNode?
-  var scoreLabel: SKLabelNode!
-  var apples = [SKSpriteNode]()
-  var gameTimer: Timer!
-  var currentIndex = 0 {
+  init(size: CGSize, start: Bool! = false) {
+    super.init(size: size)
+    self.start = start
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)
+  }
+  
+  private var start = false
+  private var spinnyNode: SKShapeNode?
+  private var scoreLabel: SKLabelNode!
+  private var apples = [SKSpriteNode]()
+  private var gameTimer: Timer!
+  private var currentIndex = 0 {
     didSet {
       if currentIndex >= score {
         gameTimer.invalidate()
@@ -22,17 +25,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
       }
     }
   }
-  var possibleApples = ["apple"]
+  private var possibleApples = ["apple"]
+  private var rightApple = 0 {
+    didSet{
+      if rightApple == score {
+        gameOver(won: true)
+      }
+    }
+  }
+  
   var score: Int = 5 {
     didSet {
       scoreLabel?.text = "Score: \(score - 5)"
-    }
-  }
-  var rightApple = 0 {
-    didSet{
-      if rightApple == score {
-        gameOver(win: true)
-      }
     }
   }
   
@@ -55,6 +59,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     scoreLabel.fontName = UIFont.systemFont(ofSize: 36).fontName
     scoreLabel.fontColor = UIColor.white
     
+    if !start { new() } else {
+      gameOver()
+    }
+  }
+  
+  private func new() {
     let savedScore = UserDefaultsHelper.shared.getInt(key: .score)
     score = savedScore != 0 ? savedScore : score
     
@@ -102,9 +112,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     currentIndex = currentIndex + 1
   }
   
-  func gameOver(win: Bool) {
+  func gameOver(won: Bool! = true) {
     let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
-    let gameOverScene = GameOverScene(size: self.size, won: win, score: score)
+    let gameOverScene = GameOverScene(size: self.size, won: won, score: score, new: start)
     self.view?.presentScene(gameOverScene, transition: reveal)
   }
   
@@ -125,7 +135,7 @@ extension GameScene {
           rightApple = rightApple + 1
         case false:
           self.makeSpinny(at: t.location(in: self), color: SKColor.red)
-          gameOver(win: false)
+          gameOver(won: false)
         }
       }
     }

@@ -17,6 +17,9 @@
 		604A74A328BF62CC00680B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 604A748E28BF62CC00680B54 /* Assets.xcassets */; };
 		604A74AA28BFC66400680B54 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A74A928BFC66400680B54 /* GameOverScene.swift */; };
 		604A74AC28BFD31200680B54 /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A74AB28BFD31100680B54 /* UserDefaultsHelper.swift */; };
+		604A74AE28C0AC0C00680B54 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A74AD28C0AC0C00680B54 /* NetworkService.swift */; };
+		604A74B128C0B72B00680B54 /* GameMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 604A74B028C0B72B00680B54 /* GameMenuView.swift */; };
+		D28DB2CAB1347B02697AD3ED /* Pods_FollowTheOrder_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F172314805F2CB2EDCE27126 /* Pods_FollowTheOrder_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,12 @@
 		604A749E28BF62CC00680B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		604A74A928BFC66400680B54 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
 		604A74AB28BFD31100680B54 /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		604A74AD28C0AC0C00680B54 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		604A74AF28C0AE6600680B54 /* FollowTheOrder-iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "FollowTheOrder-iOS-Info.plist"; sourceTree = SOURCE_ROOT; };
+		604A74B028C0B72B00680B54 /* GameMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMenuView.swift; sourceTree = "<group>"; };
+		7B4D087576C38A0FB8E170DB /* Pods-FollowTheOrder iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowTheOrder iOS.debug.xcconfig"; path = "Target Support Files/Pods-FollowTheOrder iOS/Pods-FollowTheOrder iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		F172314805F2CB2EDCE27126 /* Pods_FollowTheOrder_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FollowTheOrder_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E42356C15162D9B00B2C37 /* Pods-FollowTheOrder iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FollowTheOrder iOS.release.xcconfig"; path = "Target Support Files/Pods-FollowTheOrder iOS/Pods-FollowTheOrder iOS.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,18 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D28DB2CAB1347B02697AD3ED /* Pods_FollowTheOrder_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40EE115E215340478074CFE4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F172314805F2CB2EDCE27126 /* Pods_FollowTheOrder_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		604A748528BF62C900680B54 = {
 			isa = PBXGroup;
 			children = (
 				604A748A28BF62C900680B54 /* FollowTheOrder Shared */,
 				604A749528BF62CC00680B54 /* FollowTheOrder iOS */,
 				604A749428BF62CC00680B54 /* Products */,
+				82DB4B231CCFA1840D5A686F /* Pods */,
+				40EE115E215340478074CFE4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,13 +96,26 @@
 		604A749528BF62CC00680B54 /* FollowTheOrder iOS */ = {
 			isa = PBXGroup;
 			children = (
+				604A74AF28C0AE6600680B54 /* FollowTheOrder-iOS-Info.plist */,
 				604A749628BF62CC00680B54 /* AppDelegate.swift */,
 				604A749828BF62CC00680B54 /* GameViewController.swift */,
 				604A749A28BF62CC00680B54 /* Main.storyboard */,
 				604A749D28BF62CC00680B54 /* LaunchScreen.storyboard */,
 				604A74AB28BFD31100680B54 /* UserDefaultsHelper.swift */,
+				604A74AD28C0AC0C00680B54 /* NetworkService.swift */,
+				604A74B028C0B72B00680B54 /* GameMenuView.swift */,
 			);
 			path = "FollowTheOrder iOS";
+			sourceTree = "<group>";
+		};
+		82DB4B231CCFA1840D5A686F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7B4D087576C38A0FB8E170DB /* Pods-FollowTheOrder iOS.debug.xcconfig */,
+				F3E42356C15162D9B00B2C37 /* Pods-FollowTheOrder iOS.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -92,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 604A74A628BF62CC00680B54 /* Build configuration list for PBXNativeTarget "FollowTheOrder iOS" */;
 			buildPhases = (
+				3B71397A766A54B1C0128574 /* [CP] Check Pods Manifest.lock */,
 				604A748F28BF62CC00680B54 /* Sources */,
 				604A749028BF62CC00680B54 /* Frameworks */,
 				604A749128BF62CC00680B54 /* Resources */,
+				56634E75BA7FCCFB8F2BEB56 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +188,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3B71397A766A54B1C0128574 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FollowTheOrder iOS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56634E75BA7FCCFB8F2BEB56 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FollowTheOrder iOS/Pods-FollowTheOrder iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FollowTheOrder iOS/Pods-FollowTheOrder iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FollowTheOrder iOS/Pods-FollowTheOrder iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		604A748F28BF62CC00680B54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -161,7 +238,9 @@
 				604A74AC28BFD31200680B54 /* UserDefaultsHelper.swift in Sources */,
 				604A74A228BF62CC00680B54 /* GameScene.swift in Sources */,
 				604A749928BF62CC00680B54 /* GameViewController.swift in Sources */,
+				604A74B128C0B72B00680B54 /* GameMenuView.swift in Sources */,
 				604A74AA28BFC66400680B54 /* GameOverScene.swift in Sources */,
+				604A74AE28C0AC0C00680B54 /* NetworkService.swift in Sources */,
 				604A749728BF62CC00680B54 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +378,7 @@
 		};
 		604A74A728BF62CC00680B54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B4D087576C38A0FB8E170DB /* Pods-FollowTheOrder iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,6 +386,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T46S54Q32W;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FollowTheOrder-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -330,6 +411,7 @@
 		};
 		604A74A828BF62CC00680B54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3E42356C15162D9B00B2C37 /* Pods-FollowTheOrder iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -337,6 +419,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T46S54Q32W;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "FollowTheOrder-iOS-Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
