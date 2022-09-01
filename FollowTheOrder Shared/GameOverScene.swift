@@ -25,9 +25,9 @@ class GameOverScene: SKScene {
     }
   }
   
-  func createView(won: Bool, fortuneText: String, new: Bool! = false) {
+  private func createView(won: Bool, fortuneText: String, new: Bool! = false) {
     gameMenuView.frame = CGRect(x: 0, y: 0, width: self.size.width, height: self.size.height)
-    gameMenuView.box.delegate = self
+    gameMenuView.delegate = self
     gameMenuView.populate(won: won, fortune: fortuneText, new: new)
     self.view?.addSubview(gameMenuView)
   }
