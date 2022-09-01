@@ -8,7 +8,7 @@ protocol StackViewDelegate: AnyObject {
 class GameMenuView: UIView {
   
   var delegate: StackViewDelegate?
-  var box = GameStackView()
+  private var box = GameStackView()
   private var labelFortune = UILabel()
   private var label = UILabel()
   
@@ -21,7 +21,7 @@ class GameMenuView: UIView {
     super.init(coder: coder)
   }
   
-  func setup() {
+  private func setup() {
     self.addSubview(box)
     self.addSubview(labelFortune)
     self.addSubview(label)
@@ -53,6 +53,7 @@ class GameMenuView: UIView {
   }
   
   public func populate(won: Bool! = true, fortune: String, new: Bool! = false) {
+    box.delegate = delegate
     var message = "Hi!!!!"
     if !new {
       message = won ? "You Won!" : "Oooops"
@@ -102,7 +103,7 @@ class GameStackView: UIStackView {
     }
   }
   
-  @objc func didTapOnView(_ gestureRecognizer: UIGestureRecognizer) {
+  @objc private func didTapOnView(_ gestureRecognizer: UIGestureRecognizer) {
     if let index = arrangedSubviews.firstIndex(of: gestureRecognizer.view!) {
       delegate?.didTapOnView(at: index)
     }
